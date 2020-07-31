@@ -7,7 +7,7 @@ import './tailwind.output.css';
 
 function App() {
   return (
-    <StepperGeneric/>
+    <StepperGeneric />
   );
 }
 
