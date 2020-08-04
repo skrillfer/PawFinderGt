@@ -19,7 +19,7 @@ const StepperGeneric = () => {
                 </div>
                 <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${step>0?'border-teal-600':'border-gray-300'}`}></div>
 
-                <div className={`flex items-center relative ${step>=1?'text-white':'text-teal-600'}`}>
+                <div className={`flex items-center relative ${step>1?'text-white':'text-gray-600'}`}>
                 <div className={`rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 ${step>1?'bg-teal-600 border-teal-600':'border-gray-300'}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user-plus ">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
