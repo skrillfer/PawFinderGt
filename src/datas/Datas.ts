@@ -7,7 +7,8 @@ import {
   NewsPostModel,
   ImageModel,
   StoryModel,
-  MediaModel
+  MediaModel,
+  AdoptionModel
 } from "../models";
 
 const reviewModels = () =>
@@ -128,6 +129,41 @@ Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, ad
 
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.`,
     reviews: reviewModels()
+  }
+];
+
+export const adoptionList: AdoptionModel[] = [
+  {
+    fullName: "Oscar Martinez",
+    about: "asdasdas",
+    adoptedPet: "Doby",
+    imageUrl: "https://placekitten.com/g/200/201",
+    isOnline: false,
+    adoptedDate: new Date("12/10/2020")
+  },
+  {
+    fullName: "Maria Jose Perez",
+    about: "asdasdas",
+    adoptedPet: "Carlitos",
+    imageUrl: "https://placekitten.com/g/200/202",
+    isOnline: false,
+    adoptedDate: new Date("12/10/2020")
+  },
+  {
+    fullName: "Luis Fernando Ramirez",
+    about: "asdasdas",
+    adoptedPet: "Firulais",
+    imageUrl: "https://placekitten.com/g/200/203",
+    isOnline: false,
+    adoptedDate: new Date("12/10/2020")
+  },
+  {
+    fullName: "Luis Fernando Ramirez",
+    about: "asdasdas",
+    adoptedPet: "Firulais",
+    imageUrl: "https://placekitten.com/g/200/203",
+    isOnline: false,
+    adoptedDate: new Date("12/10/2020")
   }
 ];
 

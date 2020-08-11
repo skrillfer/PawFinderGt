@@ -23,6 +23,8 @@ import { DashboardService } from "../../services";
 import { useLocalization } from "../../localization";
 import NavigationNames from "../../navigations/NavigationNames";
 import { HomeMenuItemType } from "../../types";
+import { AdoptionItemRow } from "../../components/adoptions/AdoptionItemRow";
+import { FabButton, Button } from "../../components/buttons";
 
 const generateMenuItems = (
   getString: (key: string) => string
@@ -63,6 +65,10 @@ export const HomeScreen: React.FC<TProps> = props => {
     });
   }, []);
 
+  const onPressNewAppointment = () => {
+    navigation.navigate(NavigationNames.NewAppointmentScreen);
+  };
+
   const onClickMenu = (item: HomeMenuItemType) => {
     switch (item.action) {
       case "BookAnAppoinment":
@@ -85,7 +91,7 @@ export const HomeScreen: React.FC<TProps> = props => {
     <ScrollView
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
-    >
+    >{/*
       <UpcomingAppoinmentRow
         style={styles.upcomingAppoinmentRow}
         item={dashboardItem.appointment}
@@ -128,9 +134,10 @@ export const HomeScreen: React.FC<TProps> = props => {
         contentContainerStyle={styles.campaignsContainer}
         keyExtractor={(item, index) => `key${index}ForCampaign`}
       />
-      <SectionHeader
-        title={getString("All Specialists")}
-        rightTitle={getString("See More")}
+      */}
+      {/*<SectionHeader
+        title={getString("Adopciones")}
+        rightTitle={getString("Ver mas")}
         rightAction={() =>
           navigation.navigate(NavigationNames.DoctorListScreen)
         }
@@ -152,7 +159,33 @@ export const HomeScreen: React.FC<TProps> = props => {
         )}
         ItemSeparatorComponent={() => <Divider h16 />}
         scrollEnabled={false}
+      />*/}
+      <SectionHeader
+        title={getString("Adopciones")}
+        rightTitle={getString("Ver mas")}
+        rightAction={() =>
+          navigation.navigate(NavigationNames.DoctorListScreen)
+        }
       />
+      <FlatList
+        data={dashboardItem.adoptions.slice(0, 3)}
+        keyExtractor={(item, index) => `key${index}ForAdoption`}
+        renderItem={row => (
+          <TouchableOpacity
+            style={styles.touchableDoctorItem}
+            onPress={() =>
+              navigation.navigate(NavigationNames.DoctorDetailScreen, {
+                model: JSON.stringify(row.item)
+              })
+            }
+          >
+            <AdoptionItemRow item={row.item} />
+          </TouchableOpacity>
+        )}
+        ItemSeparatorComponent={() => <Divider h16 />}
+        scrollEnabled={false}
+      />
+      {/*
       <SectionHeader
         title={getString("Our Departments")}
         rightTitle={getString("See More")}
@@ -160,6 +193,7 @@ export const HomeScreen: React.FC<TProps> = props => {
           navigation.navigate(NavigationNames.DepartmentListScreen)
         }
       />
+
       <FlatList
         data={dashboardItem.departments}
         renderItem={row => (
@@ -178,7 +212,8 @@ export const HomeScreen: React.FC<TProps> = props => {
         ItemSeparatorComponent={() => <View style={styles.horizontalDivider} />}
         keyExtractor={(item, index) => `key${index}ForDepartment`}
         contentContainerStyle={styles.departmentsContainer}
-      />
+          />*/}
+          <FabButton onPress={onPressNewAppointment} />
     </ScrollView>
   );
 };
