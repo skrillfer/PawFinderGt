@@ -19,7 +19,8 @@ import {
   NewAppointmentScreen,
   DoctorListScreen,
   DoctorDetailScreen,
-  EventListScreen
+  EventListScreen,
+  CreateAdoptionScreen
 } from "../screens";
 import { ToolbarBrandLogo } from "../components";
 
@@ -62,6 +63,11 @@ const HomeTabStack = () => {
         name={NavigationNames.DoctorListScreen}
         component={DoctorListScreen}
         options={{ title: getString("Doctors") }}
+      />
+      <Stack.Screen
+        name={NavigationNames.CreateAdoptionScreen}
+        component={CreateAdoptionScreen}
+        options={{ title: getString("Nueva Adopcion")}}
       />
       <Stack.Screen
         name={NavigationNames.DoctorDetailScreen}

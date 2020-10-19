@@ -213,7 +213,9 @@ export const HomeScreen: React.FC<TProps> = props => {
         keyExtractor={(item, index) => `key${index}ForDepartment`}
         contentContainerStyle={styles.departmentsContainer}
           />*/}
-          <FabButton onPress={onPressNewAppointment} />
+          <FabButton onPress={() =>
+              navigation.navigate(NavigationNames.CreateAdoptionScreen, {})
+          }/>
     </ScrollView>
   );
 };

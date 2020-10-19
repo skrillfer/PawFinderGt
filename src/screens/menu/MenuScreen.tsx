@@ -7,6 +7,7 @@ import { useLocalization } from "../../localization";
 import { SettingsBottomSheet } from "../../modals";
 import NavigationNames from "../../navigations/NavigationNames";
 import { useNavigation } from "@react-navigation/native";
+import AuthContext from '../../react-context/auth/auth-storage';
 
 const getMenuItems = (getString: (key: string) => string) => [
   {
@@ -42,6 +43,11 @@ const getMenuItems = (getString: (key: string) => string) => [
     title: getString("Settings"),
     iconName: "md-settings",
     openSettings: true
+  },
+  {
+    title: getString("Salir"),
+    iconName: "md-log-out",
+    logout: true
   }
 ];
 
@@ -53,12 +59,16 @@ export const MenuScreen: React.FC<TProps> = props => {
 
   const [isVisibleSettingModal, setIsVisibleSettingModal] = useState(false);
   const menuItems = getMenuItems(getString);
+  const { signOut } = React.useContext(AuthContext);
 
   const onPressMenuItemClick = (item: any) => {
     if (item.openSettings) {
       setIsVisibleSettingModal(true);
     } else if (item.navigateToScreen) {
       navigation.navigate(item.navigateToScreen);
+    }
+    if(item.logout){
+      signOut();
     }
   };
 
