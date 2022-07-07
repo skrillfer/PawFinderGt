@@ -23,7 +23,7 @@
     "expo-image-picker": "~8.1.0",
     "expo-permissions": "~8.1.0",
     "i18next": "^19.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "numeral": "^2.0.6",
     "react": "16.9.0",
     "react-dom": "16.9.0",
